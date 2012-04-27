@@ -6,20 +6,17 @@ h2. lolwut
 
 Check out the User model.
 
-<pre><code>
-attr_dynamic :name, :string
+<pre><code>attr_dynamic :name, :string
 attr_dynamic :height, :integer
 attr_dynamic :birthday, :datetime
 
-validates_presence_of :name
-</pre></code>
+validates_presence_of :name</pre></code>
 
 h2. Stuff to try
 
 Run @rails console@ and play around:
 
-<pre><code>
-u = User.new
+<pre><code>u = User.new
 u.name = 'Herp Derpington'
 u.height = 6
 u.birthday = DateTime.now
@@ -32,9 +29,12 @@ u.height = nil
 u.save
 
 u.inspect
-DynamicAttribute.count
-</code></pre>
+DynamicAttribute.count</code></pre>
 
 Pretty nifty, huh? Currently supports string, datetime, and integer data types.
 
-You can also use @validates_presence_of@ on dynamic attributes.
+You can also use @validates_presence_of@.
+
+h2. This code sucks
+
+Don't use it on any projects. It's mostly a proof-of-concept.
