@@ -16,20 +16,20 @@ h2. Stuff to try
 
 Run @rails console@ and play around:
 
-<pre><code>u = User.new
-u.name = 'Herp Derpington'
-u.height = 6
-u.birthday = DateTime.now
-u.save
+<pre><code>user = User.new
+user.name = 'Herp Derpington'
+user.height = 6
+user.birthday = DateTime.now
 
-u.inspect
-DynamicAttribute.count
+
+user # => #<User id: nil, created_at: nil, updated_at: nil || name: "Herp Derpington", height: 6, birthday: Fri, 27 Apr 2012 01:53:36 -0400> 
+user.inspect
+DynamicAttribute.count # => 3
 
 u.height = nil
-u.save
 
-u.inspect
-DynamicAttribute.count</code></pre>
+user # => #<User id: nil, created_at: nil, updated_at: nil || name: "Herp Derpington", height: nil, birthday: Fri, 27 Apr 2012 01:53:36 -0400> 
+DynamicAttribute.count # => 2</code></pre>
 
 Pretty nifty, huh? Currently supports string, datetime, and integer data types.
 
