@@ -1,16 +1,31 @@
 h1. attr_dynamic
 
-Fancy, flexible key-value coding for Rails. Awful code; not for use by anyone.
+Sugary key-value coding for Rails. Awful code; not for use by anyone.
 
 h2. lolwut
 
-Check out the User model.
+Check out the User model...
 
-<pre><code>attr_dynamic :name, :string
-attr_dynamic :height, :integer
-attr_dynamic :birthday, :datetime
+<pre><code>class User < ActiveRecord::Base
+  attr_dynamic :name, :string
+  attr_dynamic :height, :integer
+  attr_dynamic :birthday, :datetime
+  
+  validates_presence_of :name
+end</pre></code>
 
-validates_presence_of :name</pre></code>
+... and its schema ...
+
+<pre><code>create_table "users", :force => true do |t|
+  t.datetime "created_at"
+  t.datetime "updated_at"
+end</code></pre>
+
+What the hell is going on here? 
+
+attr_dynamic wedges itself into ActiveRecord and pretends to have columns where they don't actually exist for that ActiveRecord table. Instead, they are stored in an auxiliary model, DynamicAttribute, which is a simple key/value pair. It has polymorphic associations, so you can apply it to any class. 
+
+You can add tack on dynamic attributes without having to run any migrations. They default to nil.
 
 h2. Stuff to try
 
