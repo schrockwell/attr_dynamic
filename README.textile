@@ -24,17 +24,16 @@ user.birthday = DateTime.now
 user.save
 
 # See WTF that user looks like
-user # => #<User id: 1, created_at: nil, updated_at: nil || name: "Herp Derpington", height: 6, birthday: Fri, 27 Apr 2012 01:53:36 -0400> 
-user.inspect
-DynamicAttribute.count # => 3
+user
+DynamicAttribute.count
 
 # Null out the user height
 user.height = nil
 user.save
 
 # Check out our user model again. We only have 2 dynamic_attribute rows now
-user # => #<User id: 1, created_at: nil, updated_at: nil || name: "Herp Derpington", height: nil, birthday: Fri, 27 Apr 2012 01:53:36 -0400> 
-DynamicAttribute.count # => 2</code></pre>
+user
+DynamicAttribute.count</code></pre>
 
 Pretty nifty, huh? Currently supports string, datetime, and integer data types.
 
