@@ -2426,3 +2426,19 @@ DEPRECATION WARNING: You are using the old router DSL which will be removed in R
   [1m[35mDynamicAttribute Load (0.7ms)[0m  SELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = NULL AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'name') LIMIT 1
   [1m[36mDynamicAttribute Load (0.5ms)[0m  [1mSELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = NULL AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'height') LIMIT 1[0m
   [1m[35mDynamicAttribute Load (0.7ms)[0m  SELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = NULL AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'birthday') LIMIT 1
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/Rockwell/Projects/attr_dynamic/attr_dynamic/config/routes.rb:1)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mDynamicAttribute Load (0.5ms)[0m  SELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = NULL AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'name') LIMIT 1
+  [1m[36mDynamicAttribute Load (0.4ms)[0m  [1mSELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = NULL AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'height') LIMIT 1[0m
+  [1m[35mDynamicAttribute Load (0.4ms)[0m  SELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = NULL AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'birthday') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  describe `users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `updated_at`) VALUES ('2012-04-27 05:55:31', '2012-04-27 05:55:31')[0m
+  [1m[35mDynamicAttribute Load (0.6ms)[0m  SELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = 13 AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'name') LIMIT 1
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `dynamic_attributes`[0m
+  [1m[35mAREL (0.8ms)[0m  INSERT INTO `dynamic_attributes` (`target_type`, `target_id`, `key`, `value`, `created_at`, `updated_at`) VALUES ('User', 13, 'name', 'Herp Derpington', '2012-04-27 05:55:31', '2012-04-27 05:55:31')
+  [1m[36mDynamicAttribute Load (0.5ms)[0m  [1mSELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = 13 AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'height') LIMIT 1[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `dynamic_attributes` (`target_type`, `target_id`, `key`, `value`, `created_at`, `updated_at`) VALUES ('User', 13, 'height', '6', '2012-04-27 05:55:31', '2012-04-27 05:55:31')
+  [1m[36mDynamicAttribute Load (0.9ms)[0m  [1mSELECT `dynamic_attributes`.* FROM `dynamic_attributes` WHERE (`dynamic_attributes`.target_id = 13 AND `dynamic_attributes`.target_type = 'User') AND (`dynamic_attributes`.`key` = 'birthday') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `dynamic_attributes` (`target_type`, `target_id`, `key`, `value`, `created_at`, `updated_at`) VALUES ('User', 13, 'birthday', '2012-04-27T01:55:30-04:00', '2012-04-27 05:55:31', '2012-04-27 05:55:31')
+  [1m[36mSQL (31.7ms)[0m  [1mCOMMIT[0m
